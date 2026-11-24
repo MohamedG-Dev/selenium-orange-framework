@@ -19,7 +19,7 @@ public class ApiTest {
 		ExtentManager.logStep("Sending GET request to the API");
 		Response response = ApiUtility.getRequest(endPoint);
 		ExtentManager.logStep("Validating API response status code");
-		boolean isStatusCodeValid = ApiUtility.validateStatusCode(response, 201);
+		boolean isStatusCodeValid = ApiUtility.validateStatusCode(response, 200);
 		if (isStatusCodeValid) {
 			ExtentManager.logStepValidationForAPI(isStatusCodeValid + "Status Code is as expected");
 		} else {

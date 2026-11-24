@@ -31,12 +31,12 @@ pipeline{
 	}
 	post{
 		always {
-            archiveArtifacts artifacts: '**/src/test/resources/ExtentReport/*.html', fingerprint: true
+            archiveArtifacts artifacts: '**/src/test/resources/extentReport/*.html', fingerprint: true
             junit 'target/surefire-reports/*.xml'
         }
         success {
             emailext (
-                to: 'hitendraverma22@gmail.com',
+                to: 'mosamag96@gmail.com',
                 subject: "Build Success: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
                 <html>
@@ -59,7 +59,7 @@ pipeline{
         }
         failure {
             emailext (
-                to: 'hitendraverma22@gmail.com',
+                to: 'mosamag96@gmail.com',
                 subject: "Build Failed: ${env.JOB_NAME} #${env.BUILD_NUMBER}",
                 body: """
                 <html>
